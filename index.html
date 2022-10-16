@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+	<title>GRUPO 0</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="dm-menu">
+		<div class="dm-item">
+			<a href="#cuatrimotos">Cuatrimotos</a>
+		</div>
+		<div class="dm-item">
+			<a href="#clientes">Clientes</a>
+		</div>
+		<div class="dm-item">
+			<a href="#admin">Admin</a>
+		</div>
+		<div class="dm-item">
+			<a href="#mensajes">Mensajes</a>
+		</div>
+		<div class="dm-item">
+			<a href="#reservas">Reservas</a>
+		</div>
+		<div class="dm-item">
+			<a href="#categorias">Categorías</a>
+		</div>
+		<div class="dm-item">
+			<a href="#puntaje">Puntaje</a>
+		</div>
+	</div>
+
+	<div class="dm-content">
+		<h1 style="margin-top: 10rem;">API REST | MINTIC | 2022</h1>
+	</div>
+
+	<div class="dm-content">
+
+		<div id="cuatrimotos"class="dm-back-form">
+			<h2>CUATRIMOTOS</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input hidden type="number" id="idCuatrimoto" placeholder="ID"><br>
+					<input type="text" id="nombreCuatrimoto" placeholder="Nombre"><br>
+					<input type="text" id="marcaCuatrimoto"placeholder="Marca Cuatrimoto"><br>
+					<input type="text" id="modeloCuatrimoto" placeholder="Modelo"><br>
+					<textarea name="descriptionName" id="descriptionQuadbike" rows="2" cols="38" placeholder="Descripción" style="padding: 1rem;"></textarea>
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarCuatrimoto()">Guardar</button>
+					<button onclick="editarCuatrimoto()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerCuatrimotos()">Mostrar Todos</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaCuatrimotos">
+
+			</div>
+		</div>
+
+		<div id="clientes" class="dm-back-form">
+			<h2>CLIENTES</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input hidden type="number" id="idCliente" placeholder="ID"><br>
+					<input type="text" id="nombreCliente" placeholder="Nombre Cliente"><br>
+					<input type="text" id="mailCliente" placeholder="E-mail"><br>
+					<input type="number" id="edadCliente" placeholder="Edad"><br>
+					<input type="password" id="passwordCliente" name="passwordCliente" placeholder="Password">
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarCliente()">Guardar</button>
+					<button onclick="editarCliente()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerClientes()">Mostrar Todos</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaClientes">
+
+			</div>
+		</div>
+
+
+
+		<div id="mensajes" class="dm-back-form">
+			<h2>MENSAJES</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input hidden type="number" id="idMensaje" placeholder="ID"><br>
+					<textarea name="message" id="cuerpoMensaje" rows="2" cols="38"placeholder="Cuerpo del mensaje" style="padding: 1rem;"></textarea>
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarMensaje()">Enviar</button>
+					<button onclick="editarMensaje()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerMensajes()">Mostrar Todos</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaMensajes">
+
+			</div>
+		</div>
+
+
+
+		<div id="categorias"class="dm-back-form">
+			<h2>CATEGORÍAS</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input hidden type="number" id="idCategoria" placeholder="ID"><br>
+					<input type="text" id="nombreCategoria" placeholder="Nombre"><br>
+					<input type="text" id="descripcionCategoria"placeholder="Descripción"><br>
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarCategoria()">Guardar</button>
+					<button onclick="editarCategoria()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerCategorias()">Mostrar Todos</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaCategorias">
+
+			</div>
+		</div>
+
+		<div id="puntaje"class="dm-back-form">
+			<h2>Puntaje</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input hidden type="number" id="idPuntaje" placeholder="ID"><br>
+					<textarea name="messageScore" id="cuerpoMensajeScore" rows="2" cols="42"placeholder="Cuerpo del mensaje" style="padding: 1rem;"></textarea><br>
+					<input type="number" id="stars" placeholder="Puntaje">
+				</div>
+				<div class="dm-inputs">
+
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarPuntaje()">Guardar</button>
+					<button onclick="editarPuntaje()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerPuntajes()">Mostrar Todos</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaPuntajes">
+
+			</div>
+		</div>
+
+		<div id="admin" class="dm-back-form">
+			<h2>ADMINISTRADORES</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input type="number" id="idAdmin" placeholder="ID"><br>
+					<input type="text" id="nombreAdmin" placeholder="Nombre Administradores"><br>
+					<input type="text" id="mailAdmin" placeholder="E-mail"><br>
+					<input type="number" id="edadAdmin" placeholder="Edad"><br>
+					<input type="password" id="passwordAdmin" name="passwordAdmin" placeholder="Password">
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarAdmin()">Guardar</button>
+					<button onclick="editarAdmin()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerAdmins()">Mostrar Todos</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="obtenerAdmin()">Obtener Admin</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaAdmin">
+
+			</div>
+		</div>
+
+		<div id="reservas"class="dm-back-form">
+			<h2>RESERVAS</h2>
+			<div class="dm-form">
+				<div class="dm-inputs">
+					<input type="number" id="idReserva" placeholder="ID"><br>
+					<input type="text" id="startDate" placeholder="Fecha de Inicio"><br>
+					<input type="text" id="devolutionDate"placeholder="Fecha de Devolución"><br>
+					<input type="text" id="status" placeholder="Estado de la solicitud"><br>
+				</div>
+				<div class="dm-buttons">
+					<button onclick="guardarReserva()">Guardar</button>
+					<button onclick="editarReserva()">Actualizar</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="leerReservas()">Mostrar Todos</button>
+				</div>
+				<div class="dm-buttons-2">
+					<button onclick="obtenerReserva()">Obtener Rerserva</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+			<div class="lista" id="listaReservas">
+
+			</div>
+		</div>
+
+		<div class="footer">
+			<h1 style="margin-top: 10rem;">API REST | MINTIC | 2022</h1>
+		</div>
+
+
+	</div>
+
+
+
+</body>
+<script type="text/javascript" src="js/clientes.js"></script>
+<script type="text/javascript" src="js/cuatrimotos.js"></script>
+<script type="text/javascript" src="js/mensajes.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/reservas.js"></script>
+<script type="text/javascript" src="js/categorias.js"></script>
+<script type="text/javascript" src="js/puntajes.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+</html>
